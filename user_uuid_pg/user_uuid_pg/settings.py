@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'user',
     'school',
     'date_range',
+    'two_dates',
 ]
 
 MIDDLEWARE = [
