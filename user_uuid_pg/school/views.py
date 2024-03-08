@@ -45,7 +45,7 @@ class StudentViewSet(viewsets.ModelViewSet):
             # print("res_dict", res_dict)
             res_list.append(res_dict)
     
-    print("RES LIST", res_list)
+    # print("RES LIST", res_list)
 
     # prints what i want to return in the get_queryset when def (next 2 lines) commented out
 
