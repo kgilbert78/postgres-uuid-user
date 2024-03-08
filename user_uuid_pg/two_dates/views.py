@@ -1,7 +1,7 @@
+from datetime import date
 from rest_framework import viewsets
 from .models import File
 from .serializer import FileSerializer
-from django.db.backends.postgresql.psycopg_any import NumericRange
 
 class FileViewSet(viewsets.ModelViewSet):
     serializer_class = FileSerializer
@@ -13,6 +13,8 @@ class FileViewSet(viewsets.ModelViewSet):
         end_query = self.request.query_params.get("end")
 
         if start_query is not None:
+            if end_query is None:
+                end_query = str(date.today())
             queryset = File.objects.filter(orig_date_start__range=(start_query, end_query))
 
         return queryset
